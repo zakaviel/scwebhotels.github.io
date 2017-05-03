@@ -12,6 +12,10 @@ namespace ScrumHotelsWebApp.Controllers
         {
             return View();
         }
+        public ActionResult Search()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {
