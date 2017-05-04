@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "Search Page";
 }
-<br />
+
+<link href="@Url.Content("~/Content/bootstrap-theme.min.css")" rel="stylesheet" type="text/css" media="all" />
 
 @*<div class="container-fluid" style="color:#FF5722;">
     <div class="jumbotron">
@@ -19,49 +20,106 @@
             </form>
         </div>
     </div>
+
  </div>*@
 
-<div class="container">
-    <div class="right">
-        <div class="col-sm-2 col-sm-offset-4 col-lg-4 col-lg-offset-7">
+<div class="header">
+    <div class="top-header">
+
+            <div class="clear"> </div>
+        </div>
+    </div>
+
+
+<div class="top">
+ </div>
+
+<div class="header_top">
+    <div class="logo">
+        <a href="/"><img src="/Content/images/logo.png" alt=""></a>
+    </div>
+
+
+    <div class="clear"></div>
+</div>
+
+<div class="header_bottom">
+    
+    <div class="input-group">
+        <input type="text" class="form-control">
+        <span class="input-group-btn">
+            <button class="btn btn-primary btn-block" type="button">Go!</button>
+        </span>
+    </div>
+
+ </div>
+<div class="container body-content">
+
+    <div class="header_bottom_left">
+        <div class="categories">
+            <ul>
+                <h3>Buscar</h3>
+
+                <li>
+                    @Html.Label("Estrellas ")
+                    <select class="form-control bs-select-hidden" title="City">
+
+
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            <option value="">@i</option>
+                        }
+                    </select>
+                </li>
+                <li>
+                   @Html.Label("Ciudad ")
+                <select class="form-control bs-select-hidden" title="City">
+
+                    @for (int i = 0; i < 15; i++)
+                    {
+                        <option value="">Ciudad @(i + 1)</option>
+                    }
+                </select>
+
+                </li>
+                <li>
+                   @Html.Label("Distrito ")
+                <select class="form-control bs-select-hidden" title="Distric">
+                    <option class="bs-title-option" value="">Distrito</option>
+                    @for (int i = 0; i < 15; i++)
+                    {
+                        <option value="">Distrito @(i + 1)</option>
+                    }
+
+
+                </select>
+
+                </li>
+
+                <li>
+                    <form method="get" action="?">
+                        <div class="hero-image-location form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Hotel</button>
+                        </div>
+                    </form>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+
+        
+
+
+        @*<div class="col-sm-2 col-sm-offset-4 col-lg-4 col-lg-offset-7">*@
+        <div class="col-sm-8 ">
             <form method="get" action="?">
-                <h2>Start Searching</h2>
-
-                <div class="hero-image-keyword form-group">
-                    <input type="text" class="form-control" placeholder="Keyword">
-                </div><!-- /.form-group -->
-
                 <div class="hero-image-location form-group">
-                    <select class="form-control bs-select-hidden" title="Location">
-                        <option class="bs-title-option" value="">Location</option>
-                        <option>Bronx</option>
-                        <option>Brooklyn</option>
-                        <option>Manhattan</option>
-                        <option>Staten Island</option>
-                        <option>Queens</option>
-                    </select><div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="Location" aria-expanded="false"><span class="filter-option pull-left">Location</span>&nbsp;<span class="caret"></span></button><div class="dropdown-menu open" style="max-height: 229px; overflow: hidden; min-height: 107px;"><ul class="dropdown-menu inner" role="menu" style="max-height: 225px; overflow-y: auto; min-height: 103px;"><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Bronx</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Brooklyn</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Manhattan</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Staten Island</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Queens</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div></div>
-                </div><!-- /.form-group -->
-
-                <div class="hero-image-category form-group">
-                    <select class="form-control bs-select-hidden" title="Category">
-                        <option class="bs-title-option" value="">Category</option>
-                        <option value="">Automotive</option>
-                        <option value="">Jobs</option>
-                        <option value="">Nightlife</option>
-                        <option value="">Services</option>
-                    </select><div class="btn-group bootstrap-select form-control"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" title="Category" aria-expanded="false"><span class="filter-option pull-left">Category</span>&nbsp;<span class="caret"></span></button><div class="dropdown-menu open" style="max-height: 166px; overflow: hidden; min-height: 107px;"><ul class="dropdown-menu inner" role="menu" style="max-height: 162px; overflow-y: auto; min-height: 103px;"><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Automotive</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Jobs</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Nightlife</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Services</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div></div>
-                </div><!-- /.form-group -->
-
-                <div class="hero-image-price form-group">
-                    <input type="text" class="form-control" placeholder="Min. Price">
-                </div><!-- /.form-group -->
-
-                <button type="submit" class="btn btn-primary btn-block">Search</button>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Hotel</button>
+                </div>
             </form>
         </div>
     </div>
-    
-    <div class="left">
-
-    </div>
-</div>
