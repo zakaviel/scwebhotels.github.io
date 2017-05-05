@@ -20,11 +20,11 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 100%;
 }
 
-.navbar-form .form-group input {
-  width: calc(100% - 50px);
+/*.navbar-form .form-group input {
+ 
   display: inline-block;
   vertical-align: top;
 }
@@ -45,6 +45,6 @@ textarea {
 
 .SearchBar{
 
-}
+}*/
 
 /*FiveStartsBootstrap*/
