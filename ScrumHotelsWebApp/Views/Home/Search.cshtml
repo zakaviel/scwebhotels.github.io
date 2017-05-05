@@ -43,35 +43,57 @@
     <div class="clear"></div>
 </div>
 
-<div class="header_bottom">
+<div class="container header">
     
-    <div class="input-group">
-        <input type="text" class="form-control">
-        <span class="input-group-btn">
-            <button class="btn btn-primary btn-block" type="button">Go!</button>
-        </span>
-    </div>
+   
 
  </div>
-<div class="container body-content">
+<div class="body-content">
 
-    <div class="header_bottom_left">
-        <div class="categories">
+    <div class="header_top">
+
+
+        <div >
+            <div class="well ">
+                <form class="form-inline" action="#" method="post">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                            <div class="col-xs-12"> 
+                                <input type="text" class="form-control SearchBar" size="200" placeholder="Precio">
+                            </div>
+                               
+                                <span class="input-group-btn">
+                                    <button class="btn btn-defaul SearchButton" type="button">
+                                        <span class="glyphicon glyphicon-search SearchIcon"></span>
+                                    </button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+    <div class="header_bottom_left ">
+        <div class="categories ">
             <ul>
-                <h3>Buscar</h3>
+                <h3 >Buscar</h3>
 
                 <li>
+                    <div class="price-details">
+                    </div>
                     @Html.Label("Estrellas ")
-                    <select class="form-control bs-select-hidden" title="City">
-
-
-                        @for (int i = 0; i < 5; i++)
-                        {
-                            <option value="">@i</option>
-                        }
-                    </select>
+                    <input id="input-7-xs" class="rating rating-loading" value="1" data-min="0" data-max="5" data-step="0.5" data-size="xs" ><hr/>
                 </li>
                 <li>
+                    <div class="price-details">
+                    </div>
                    @Html.Label("Ciudad ")
                 <select class="form-control bs-select-hidden" title="City">
 
@@ -83,6 +105,8 @@
 
                 </li>
                 <li>
+                    <div class="price-details">
+                    </div>
                    @Html.Label("Distrito ")
                 <select class="form-control bs-select-hidden" title="Distric">
                     <option class="bs-title-option" value="">Distrito</option>
@@ -96,30 +120,147 @@
 
                 </li>
 
-                <li>
-                    <form method="get" action="?">
-                        <div class="hero-image-location form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Hotel</button>
-                        </div>
-                    </form>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-
-        
-
-
-        @*<div class="col-sm-2 col-sm-offset-4 col-lg-4 col-lg-offset-7">*@
-        <div class="col-sm-8 ">
-            <form method="get" action="?">
-                <div class="hero-image-location form-group">
                     
-                    <button type="submit" class="btn btn-primary btn-block">Hotel</button>
-                </div>
-            </form>
+
+
+                    
+
+</ul>
+            <div class="price-details">
+            </div>
+
+
+
         </div>
+
+        <div class="header-bottom">
+            <div class="extra-wrap">
+                <!-- start header menu -->
+                <ul class="megamenu skyblue">
+                    <li class="grid">
+
+                        <a class="color1" href="#">#Buscar</a>
+
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
     </div>
+
+        <div class="header_bottom_right">
+
+            <div class="content_top" id="divMessage" hidden>
+
+                <div class="clear"></div>
+
+                <div class="heading">
+                    <h3 id="update-message"></h3>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+
+            <div class="slider">
+                <div class="main">
+                    <div class="content">
+
+
+                        <div class="content_top">
+                            <div class="clear"></div>
+                            <div class="heading">
+                                <h3> Hoteles </h3>
+                            </div>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="section group">
+                            @*Inicio*@
+                            @for(int i=0; i<5;i++)
+                            {
+
+
+
+
+                                <br/>
+
+
+                                @* Inicio *@
+
+
+
+                                <div class="content_top grid_1_of_1 images_1_of_1">
+                                    <a href="@Url.Action("Details", "Store", new { id = i })">
+                                    </a>
+                                    
+                                    
+                                    <div class="header-bottom">
+                                        <div class="extra-wrap">
+                                            <!-- start header menu -->
+                                            <ul class="megamenu skyblue">
+                                                <li class="grid">
+
+                                                    <a class="color1" href="#">#NombreHotel #@(i+1)</a>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="price-details">
+                                        <div class="price-number">
+
+                                            <p><span class="rupees">Descripcion #@(i+1)</span></p>
+                                            <p><span class="rupees">#Departamento - #Ciudad</span></p>
+                                            <p><span class="rupees">#Distrito</span></p>
+                                           <p> <input id="input-7-xs" class="rating rating-loading" value="@i" data-min="0" data-max="5" data-step="0.5" data-size="xs" disabled><hr /></p>
+
+                                        </div>
+                                        <div class="add-cart">
+                                            <h4><a class="AddLink" href="#" data-id="@i" @*href="@Url.Action("AddToCart", "ShoppingCart", new { id = album.AlbumId })"*@>Precio</a></h4>
+                                        </div>
+
+                                        <div class="clear"></div>
+
+                                    </div>
+
+
+                                </div>
+
+
+
+
+                                @* Fin *@
+
+
+
+
+
+
+                            }
+
+                        </div>
+
+
+
+
+
+
+
+
+                        @* Fin *@
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

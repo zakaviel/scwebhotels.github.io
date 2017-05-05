@@ -22,3 +22,29 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar-form .form-group input {
+  width: calc(100% - 50px);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.SearchIcon
+{
+    color:#fff;
+   
+}
+.SearchButton
+{
+    background-color:#ED1C24;
+    border-radius:1px;
+}
+.SearchButton:hover{
+    background-color:#C4161C;
+}
+
+.SearchBar{
+
+}
+
+/*FiveStartsBootstrap*/
