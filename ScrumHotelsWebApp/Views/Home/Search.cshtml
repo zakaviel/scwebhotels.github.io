@@ -54,17 +54,34 @@
 
         <div >
             <div class="well ">
-                <form class="form-inline" action="#" method="post">
+                <form class="form-inline" action="/home/search" method="post">
 
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="input-group">
-                           
-                                <input type="text" class="form-control" placeholder="Precio">
+
+                                <span class="input-group-btn">
+                                    <h4 class="text-left">
+                                        <div class="text-primary">
+                                            Precio hasta
+                                        </div>
+                                    </h4>
+                                </span>
+
+
+                                <div class="text-primary">
+
+                                    <input type="number" class="form-control text-center" placeholder="S/." min="0.01" step="0.01" max="2500">
+
+                                </div>
+
+
+
+    
                            
                                
                                 <span class="input-group-btn">
-                                    <button class="btn btn-defaul SearchButton" type="button">
+                                    <button class="btn btn-defaul SearchButton" type="submit">
                                         <span class="glyphicon glyphicon-search SearchIcon"></span>
                                     </button>
                                 </span>
