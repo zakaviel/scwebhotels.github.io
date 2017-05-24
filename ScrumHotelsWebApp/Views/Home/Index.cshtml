@@ -18,7 +18,8 @@
 <div class="row">
 
     <div class="well">
-        <form class="form-inline" action="/home/search" method="post">
+        @*//@Html.ActionLink(genre.Name, "Browse", "Store", new { genre = genre.Name }, new Dictionary<string, object> { { "class", "ui-btn-right" }, { "data-icon", "gear" } })*@
+        <form class="form-inline" action="/Search/Browse" method="post">
 
             <div class="row">
                     <div class="col-md-12">
@@ -35,7 +36,7 @@
 
                             <div class="text-primary">
                                 
-                                <input type="number" class="form-control text-center" placeholder="S/." min="0.01" step="0.01" max="2500">
+                                <input id="price" name="price" type="number" class="form-control text-center" placeholder="S/." min="0.01" step="0.01" max="2500">
                                 
                             </div>
 

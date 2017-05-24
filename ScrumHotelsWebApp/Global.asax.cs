@@ -12,6 +12,8 @@ namespace ScrumHotelsWebApp
     {
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(new DAL.HotelsInitializer());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

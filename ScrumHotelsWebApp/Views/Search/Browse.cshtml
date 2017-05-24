@@ -1,0 +1,308 @@
+﻿@model ScrumHotelsWebApp.ViewModel.HotelsViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Browse</title>
+</head>
+<body>
+    <div> 
+        
+    </div>
+</body>
+</html>
+
+@{
+    ViewBag.Title = "Search Page";
+}
+
+
+@*<div class="container-fluid" style="color:#FF5722;">
+        <div class="jumbotron">
+            <p><h1 class="text-center">Tresvagos</h1></p>
+            <p><h3 class="text-center">¡Hoteles en el Perú a tu precio deseado!</h3></p>
+
+        </div>
+    </div>*@
+@*<div>
+       <div >
+
+           <div class="col-md-6">
+               <form class="text-left">
+                   @Html.TextBox("precio")
+               </form>
+           </div>
+       </div>
+
+    </div>*@
+
+<div class="header">
+    <div class="top-header">
+
+        <div class="clear"> </div>
+    </div>
+</div>
+
+
+<div class="top">
+</div>
+
+<div class="header_top">
+    <div class="logo">
+        <a href="/"><img src="/Content/images/logosh.png" alt=""></a>
+    </div>
+
+
+    <div class="clear"></div>
+</div>
+
+<div class="container header">
+
+
+
+</div>
+<div class="body-content">
+
+    <div class="header_top">
+
+
+        <div>
+            <div class="well ">
+                <form class="form-inline" action="/home/search" method="post">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+
+                                <span class="input-group-btn">
+                                    <h4 class="text-left">
+                                        <div class="text-primary">
+                                            Precio hasta
+                                        </div>
+                                    </h4>
+                                </span>
+
+
+                                <div class="text-primary">
+
+                                    <input type="number" value="@Model.Precio" class="form-control text-center" placeholder="S/." min="0.01" step="0.01" max="2500">
+
+                                </div>
+
+
+
+
+
+
+                                <span class="input-group-btn">
+                                    <button class="btn btn-defaul SearchButton" type="submit">
+                                        <span class="glyphicon glyphicon-search SearchIcon"></span>
+                                    </button>
+                                </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="well container">
+
+        <div class="header_bottom_left ">
+            <div class="categories ">
+                <ul>
+                    <h3>Buscar</h3>
+
+                    <li>
+                        <div class="price-details">
+                        </div>
+                        @Html.Label("Estrellas ")
+                        <input id="input-7-xs" class="rating rating-loading" value="1" data-min="0" data-max="5" data-step="0.5" data-size="xs"><hr />
+                    </li>
+                    <li>
+                        <div class="price-details">
+                        </div>
+                        @Html.Label("Ciudad ")
+                        <select class="form-control bs-select-hidden" title="City">
+
+                            @for (int i = 0; i < 15; i++)
+                            {
+                                <option value="">Ciudad @(i + 1)</option>
+                            }
+                        </select>
+
+                    </li>
+                    <li>
+                        <div class="price-details">
+                        </div>
+                        @Html.Label("Distrito ")
+                        <select class="form-control bs-select-hidden" title="Distric">
+                            <option class="bs-title-option" value="">Distrito</option>
+                            @for (int i = 0; i < 15; i++)
+                            {
+                                <option value="">Distrito @(i + 1)</option>
+                            }
+
+
+                        </select>
+
+                    </li>
+
+
+
+
+
+
+                </ul>
+                <div class="price-details">
+                </div>
+
+
+
+            </div>
+
+            <div class="header-bottom text-center">
+                <div class="extra-wrap">
+                    <!-- start header menu -->
+                    <ul class="megamenu skyblue">
+                        <li class="grid">
+
+                            <a class="color1 text-center" href="#">#Buscar</a>
+
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="header_bottom_right">
+
+            <div class="content_top" id="divMessage" hidden>
+
+                <div class="clear"></div>
+
+                <div class="heading">
+                    <h3 id="update-message"></h3>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+
+
+            <div class="slider">
+                <div class="main">
+                    <div class="content">
+
+
+                        <div class="content_top">
+                            <div class="clear"></div>
+                            <div class="heading">
+                                <h3> Hoteles </h3>
+                            </div>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="section group">
+
+
+                @if (Model.ListaHoteles != null)
+                {
+                    foreach (var hotel in Model.ListaHoteles)
+                    {
+
+                        @*<h2>@hotel.nombrehotel</h2>
+                        <h2>@hotel.precio</h2>*@
+
+
+
+                        <br />
+
+
+                                @* Inicio *@
+
+
+
+                                <div class="content_top grid_1_of_1 images_1_of_1">
+                                    <a href="@Url.Action("Details", "Store", new { id = hotel.hotelid })">
+                                    </a>
+
+
+                                    <div class="header-bottom">
+                                        <div class="extra-wrap">
+                                            <!-- start header menu -->
+                                            <ul class="megamenu skyblue">
+                                                <li class="grid">
+
+                                                    <a class="color1" href="#">@hotel.nombrehotel</a>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="price-details">
+                                        <div class="price-number">
+
+                                            <p><span class="rupees">@hotel.direccion</span></p>
+                                            <p><span class="rupees">@hotel.ciudad</span></p>
+                                            <p><span class="rupees">@hotel.distrito</span></p>
+                                            <p> <input id="input-7-xs" class="rating rating-loading" value="@hotel.estrellas" data-min="0" data-max="5" data-step="0.5" data-size="xs" disabled><hr /></p>
+
+                                        </div>
+                                        <div class="add-cart">
+                                            <h4><a class="AddLink" href="#" data-id="@hotel.hotelid" @*href="@Url.Action("AddToCart", "ShoppingCart", new { id = album.AlbumId })"*@>S/. @hotel.precio</a></h4>
+                                        </div>
+
+                                        <div class="clear"></div>
+
+                                    </div>
+
+
+                                </div>
+
+
+
+
+                                @* Fin *@
+
+
+
+
+
+
+                    }
+
+
+                    
+                }
+
+                     
+
+                        </div>
+
+
+
+
+
+
+
+
+                        @* Fin *@
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
