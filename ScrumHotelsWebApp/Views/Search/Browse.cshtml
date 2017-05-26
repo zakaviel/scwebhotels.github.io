@@ -70,7 +70,7 @@
 
         <div>
             <div class="well ">
-                <form class="form-inline" action="/home/search" method="post">
+                <form class="form-inline" action="/Search/Browse" method="post">
 
                     <div class="row">
                         <div class="col-sm-12">
@@ -87,7 +87,7 @@
 
                                 <div class="text-primary">
 
-                                    <input type="number" value="@Model.Precio" class="form-control text-center" placeholder="S/." min="0.01" step="0.01" max="2500">
+                                    <input type="number" id="price" name="price" value="@Model.Precio" class="form-control text-center" placeholder="S/." min="0.01" step="0.01" max="2500">
 
                                 </div>
 

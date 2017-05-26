@@ -159,6 +159,5 @@ C:\Users\Aldo\Documents\GitHub\UPCScrumWebHoteles\ScrumHotelsWebApp\bin\Microsof
 C:\Users\Aldo\Documents\GitHub\UPCScrumWebHoteles\ScrumHotelsWebApp\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Aldo\Documents\GitHub\UPCScrumWebHoteles\ScrumHotelsWebApp\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Aldo\Documents\GitHub\UPCScrumWebHoteles\ScrumHotelsWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Aldo\Documents\GitHub\UPCScrumWebHoteles\ScrumHotelsWebApp\obj\Debug\ScrumHotelsWebApp.csprojResolveAssemblyReference.cache
 C:\Users\Aldo\Documents\GitHub\UPCScrumWebHoteles\ScrumHotelsWebApp\obj\Debug\ScrumHotelsWebApp.dll
 C:\Users\Aldo\Documents\GitHub\UPCScrumWebHoteles\ScrumHotelsWebApp\obj\Debug\ScrumHotelsWebApp.pdb
