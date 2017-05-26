@@ -65,12 +65,13 @@
 </div>
 <div class="body-content">
 
-    <div class="header_top">
+    <form class="form-inline" action="/Search/Browse" method="post">
+        <div class="header_top">
 
 
-        <div>
-            <div class="well ">
-                <form class="form-inline" action="/Search/Browse" method="post">
+            <div>
+                <div class="well ">
+
 
                     <div class="row">
                         <div class="col-sm-12">
@@ -105,81 +106,81 @@
                         </div><!-- /.col-lg-6 -->
                     </div><!-- /.row -->
 
-                </form>
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="well container">
+        <div class="well container">
 
-        <div class="header_bottom_left ">
-            <div class="categories ">
-                <ul>
-                    <h3>Buscar</h3>
+            <div class="header_bottom_left ">
+                <div class="categories ">
+                    <ul>
+                        <h3>Buscar</h3>
 
-                    <li>
-                        <div class="price-details">
-                        </div>
-                        @Html.Label("Estrellas ")
-                        <input id="input-7-xs" class="rating rating-loading" value="1" data-min="0" data-max="5" data-step="0.5" data-size="xs"><hr />
-                    </li>
-                    <li>
-                        <div class="price-details">
-                        </div>
-                        @Html.Label("Ciudad ")
-                        <select class="form-control bs-select-hidden" title="City">
+                        <li>
+                            <div class="price-details">
+                            </div>
+                            @Html.Label("Estrellas ")
+                            <input id="estrellas" name="estrellas" class="rating rating-loading" value="5" data-min="0" data-max="5" data-size="xs"><hr />
+                        </li>
+                        <li>
+                            <div class="price-details">
+                            </div>
+                            @Html.Label("Ciudad ")
 
-                            @for (int i = 0; i < 15; i++)
-                            {
-                                <option value="">Ciudad @(i + 1)</option>
-                            }
-                        </select>
+                            <select class="form-control bs-select-hidden" title="City" id="ciudad" name="ciudad">
+                                <option value="" hidden>Seleccione Ciudad</option>
+                                <option value="lima">Lima</option>
 
-                    </li>
-                    <li>
-                        <div class="price-details">
-                        </div>
-                        @Html.Label("Distrito ")
-                        <select class="form-control bs-select-hidden" title="Distric">
-                            <option class="bs-title-option" value="">Distrito</option>
-                            @for (int i = 0; i < 15; i++)
-                            {
-                                <option value="">Distrito @(i + 1)</option>
-                            }
-
-
-                        </select>
-
-                    </li>
-
-
-
-
-
-
-                </ul>
-                <div class="price-details">
-                </div>
-
-
-
-            </div>
-
-            <div class="header-bottom text-center">
-                <div class="extra-wrap">
-                    <!-- start header menu -->
-                    <ul class="megamenu skyblue">
-                        <li class="grid">
-
-                            <a class="color1 text-center" href="#">#Buscar</a>
-
+                            </select>
 
                         </li>
-                    </ul>
-                </div>
-            </div>
+                        <li>
+                            <div class="price-details">
+                            </div>
+                            @Html.Label("Distrito ")
 
-        </div>
+                            <select class="form-control bs-select-hidden" title="Distric" id="distrito" name="distrito">
+                                <option value="" hidden>Seleccione Distrito</option>
+                                <option value="Surco">Surco</option>
+                                <option value="Callao">Callao</option>
+
+
+
+                            </select>
+
+                        </li>
+
+
+
+
+
+
+                    </ul>
+                    <div class="price-details">
+                    </div>
+
+
+
+                </div>
+
+                <div class="header-bottom text-center">
+                    <div class="extra-wrap">
+                        <!-- start header menu -->
+                        <ul class="megamenu skyblue">
+                            <li class="grid">
+
+                                <a class="color1 text-center" href="#">#Buscar</a>
+
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+    </form>
 
         <div class="header_bottom_right">
 

@@ -27,6 +27,11 @@ namespace ScrumHotelsWebApp.Models
         [DisplayName("Distrito")]
         public string distrito { get; set; }
 
+        [Required(ErrorMessage = "Un Hotel debe tener Descripcion")]
+        [StringLength(160)]
+        [DisplayName("Descripcion")]
+        public string descripcion { get; set; }
+
         [Required(ErrorMessage = "Un Hotel debe tener Direccion")]
         [StringLength(160)]
         [DisplayName("Direccion")]
@@ -34,13 +39,15 @@ namespace ScrumHotelsWebApp.Models
         
         [Required(ErrorMessage = "Un Hotel debe tener un precio base.")]
         [Range(0.01, 100.00,ErrorMessage = "Price must be between 0.01 and 100.00")]
-        public decimal precio { get; set; }
+        public float precio { get; set; }
 
-           public int estrellas { get; set; }
+        public int estrellas { get; set; }
 
         [DisplayName("Foto del Hotel")]
         [StringLength(1024)]
         public string ImagenHoteltUrl { get; set; }
-      
+
+        
+
     }
 }

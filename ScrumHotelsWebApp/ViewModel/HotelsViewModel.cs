@@ -9,7 +9,7 @@ namespace ScrumHotelsWebApp.ViewModel
     public class HotelsViewModel
     {
         public List<Hotel> ListaHoteles {get;set;}
-        public decimal Precio { get; set; }
+        public float Precio { get; set; }
         public int estrellas { get;set; }
         public string ciudad { get; set; }
         public string distrito { get; set; }

@@ -214,6 +214,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\UniversityHotelsScrum.mdf" />
+    <Content Include="App_Data\UniversityHotelsScrum2.mdf" />
+    <Content Include="App_Data\UniversityHotelsScrum2_log.ldf">
+      <DependentUpon>UniversityHotelsScrum2.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\UniversityHotelsScrum_log.ldf">
       <DependentUpon>UniversityHotelsScrum.mdf</DependentUpon>
     </Content>

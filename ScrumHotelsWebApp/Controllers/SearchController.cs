@@ -35,7 +35,7 @@ namespace ScrumHotelsWebApp.Controllers
                 return null;
             }
         }
-        private List<Hotel> AllHotels(Decimal precio, int estrellas, String Ciudad, String Distrito)
+        private List<Hotel> AllHotels(float precio, int estrellas, String Ciudad, String Distrito)
         {
             
             
@@ -43,9 +43,56 @@ namespace ScrumHotelsWebApp.Controllers
             {
                 using (hotelsDB)
                 {
-                    var cmn = hotelsDB.Hotels.ToList().Where(v => v.precio < precio).Where(x=>x.estrellas==estrellas).Where(x=>x.ciudad==Ciudad).Where(x=>x.distrito==Distrito);
+                    var cmn = hotelsDB.Hotels.ToList().Where(v => v.precio <= precio);
                     cmn.OrderBy(v => v.precio);
-                    return cmn.ToList();
+                    List<Hotel> f1 = new List<Hotel>();
+                    if (estrellas>=0)
+                    {
+                       f1= cmn.Where(x => x.estrellas <= estrellas).ToList();
+                    }
+
+                    
+
+                    List<Hotel> f2 = new List<Hotel>();
+                    if (Ciudad!="" &&Ciudad!=null)
+                    {
+                        foreach (var ele in f1)
+                        {
+                            if (String.Compare(ele.ciudad.ToUpper(), Ciudad.ToUpper()) == 0)
+                            {
+                                f2.Add(ele);
+                            }
+                        }
+                        f2.OrderBy(v => v.precio);
+
+                    }
+                    else
+                    {
+                        f2 = f1;
+                    }
+                    List<Hotel> f3 = new List<Hotel>();
+                    if (Distrito!=""&&Distrito!=null)
+                    {
+                        
+
+                        foreach(var ele in f2)
+                        {
+                            if(ele.distrito.ToUpper().CompareTo(Distrito.ToUpper())==0)
+                            { 
+                            f3.Add(ele);
+                            }
+                        }
+                        f3.OrderBy(v => v.precio);
+                    }
+                    else
+                    {
+                        f3 = f2;
+                    }
+                  
+
+
+
+                    return f3;
                 }
             }
             catch
@@ -53,7 +100,7 @@ namespace ScrumHotelsWebApp.Controllers
                 return null;
             }
         }
-        private List<Hotel> AllHotels(Decimal precio)
+        private List<Hotel> AllHotels(float precio)
         {
             
 
@@ -61,7 +108,7 @@ namespace ScrumHotelsWebApp.Controllers
             {
                 using (hotelsDB)
                 {
-                    var cmn = hotelsDB.Hotels.ToList().Where(v=>v.precio<precio);
+                    var cmn = hotelsDB.Hotels.ToList().Where(v=>v.precio<=precio);
                     cmn.OrderBy(v => v.precio);
                     return cmn.ToList();
                     //return hotelsDB.Hotels.Where(x => x.precio < precio)
@@ -93,7 +140,7 @@ namespace ScrumHotelsWebApp.Controllers
             return View();
         }
 
-        public ActionResult Browse(decimal? price,int? estrellas,string ciudad,string distrito)
+        public ActionResult Browse(float? price,int? estrellas,string ciudad,string distrito)
         {
 
             HotelsViewModel hotelviewmodel = new HotelsViewModel();
@@ -102,10 +149,11 @@ namespace ScrumHotelsWebApp.Controllers
             {
                 if (price.HasValue)
                 {
-                    if (estrellas.HasValue && ciudad != "" && distrito != "")
+                    if (estrellas.HasValue || ciudad != "" || distrito != "")
                     {
-                        hotelviewmodel.ListaHoteles = AllHotels(price.Value, estrellas.Value, ciudad, distrito);
-                        hotelviewmodel.estrellas = estrellas.Value;
+                        
+                        hotelviewmodel.ListaHoteles = AllHotels(price.Value, estrellas.HasValue?estrellas.Value:5, ciudad, distrito);
+                        hotelviewmodel.estrellas = estrellas.HasValue ? estrellas.Value : 5;
                         hotelviewmodel.ciudad = ciudad;
                         hotelviewmodel.distrito = distrito;
 
@@ -140,7 +188,7 @@ namespace ScrumHotelsWebApp.Controllers
             return View(hotelviewmodel);
         }
 
-        public ActionResult BrowseFiltered(Decimal precio,int? estrellas,String Ciudad,String Distrito)
+        public ActionResult BrowseFiltered(float precio,int? estrellas,String Ciudad,String Distrito)
         {
             // Retrieve Genre and its Associated Albums from database
           
